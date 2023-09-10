@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version"
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
+
+      - name: Compile & Bundling
+        run: |
+          deno compile -A --unstable --target x86_64-pc-windows-msvc --output golive_win64_${{ inputs.version }} runner.ts
+          zip golive_win64_${{ inputs.version }}.zip golive_win64_${{ inputs.version }}.exe ${{ GITHUB_WORKSPACE }}/.env ${{ GITHUB_WORKSPACE }}/config.toml
+          ls
+
+      # - name: Release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     name: v${{ inputs.version }}
+      #     tag_name: v${{ inputs.version }}
+      #     generate_release_notes: true
