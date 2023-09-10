@@ -6,11 +6,6 @@ import { Vk } from "./source/vk.ts";
 import { Discord } from "./target/discord.ts";
 import { Telegram } from "./target/telegram.ts";
 
-export async function handler(): Promise<Response> {
-  await app();
-  return new Response("Ok");
-}
-
 export async function app(): Promise<void> {
   const config = await getConfig();
   const golive = new GoLive(config);
