@@ -5,6 +5,16 @@
 It tracks your channels on stream platforms and makes an _updatable_ nice looking posts in your social networks and
 messaging services with actual stream info and preview image. After the stream, it deletes the post.
 
+#### Supported streaming platforms:
+
+- Twitch
+- VK Live
+
+##### Supported messaging services:
+
+- Telegram
+- Discord
+
 ## How it works
 
 The core of **golive** is a simple script. When it runs, it goes to streaming platforms, fetch info about the stream.
@@ -43,13 +53,20 @@ More detailed instructions are coming soon...
 
 ## Showcase
 
+<div style="display: flex">
+<div style="margin-right: 15px">
+
 ### Telegram announce
 
 <img width="345" alt="image" src="https://github.com/shevernitskiy/golive/assets/28886342/f7ce8163-988d-4888-b7db-10808b9f1ccf">
+</div>
+<div>
 
 ### Discord announce
 
 <img width="329" alt="image" src="https://github.com/shevernitskiy/golive/assets/28886342/c43ac18e-c119-4550-b21d-68d3af72b6dc">
+</div>
+</div>
 
 # Contribution
 

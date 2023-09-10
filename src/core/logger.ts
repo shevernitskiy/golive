@@ -1,13 +1,5 @@
-function isDenoDeploy(): boolean {
-  return Deno.env.get("DENO_DEPLOYMENT_ID") !== undefined;
-}
-
 export function log(message: string): void {
-  if (isDenoDeploy()) {
-    return;
-  } else {
-    console.log(message);
-  }
+  if (Deno.env.get("DEBUG")) console.log(message);
 }
 
 export function error(message: string): void {
