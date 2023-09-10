@@ -21,14 +21,15 @@ jobs:
 
       - name: Compile & Bundling
         run: |
+          cp .env.example .env
           deno compile -A --unstable --target x86_64-pc-windows-msvc --output golive_win64_${{ inputs.version }} runner.ts
-          zip golive_win64_${{ inputs.version }}.zip golive_win64_${{ inputs.version }}.exe ${{ github.workspace }}/.env config.toml
+          zip golive_win64_${{ inputs.version }}.zip golive_win64_${{ inputs.version }}.exe .env config.toml
           deno compile -A --unstable --target x86_64-unknown-linux-gnu --output golive_linux64_${{ inputs.version }} runner.ts
-          zip golive_linux64_${{ inputs.version }}.zip golive_linux64_${{ inputs.version }} ${{ github.workspace }}/.env config.toml
+          zip golive_linux64_${{ inputs.version }}.zip golive_linux64_${{ inputs.version }} .env config.toml
           deno compile -A --unstable --target x86_64-apple-darwin --output golive_macos64_${{ inputs.version }} runner.ts
-          zip golive_macos64_${{ inputs.version }}.zip golive_macos64_${{ inputs.version }} ${{ github.workspace }}/.env config.toml
+          zip golive_macos64_${{ inputs.version }}.zip golive_macos64_${{ inputs.version }} .env config.toml
           deno compile -A --unstable --target aarch64-apple-darwin --output golive_macos_arm_${{ inputs.version }} runner.ts
-          zip golive_macos_arm_${{ inputs.version }}.zip golive_macos_arm_${{ inputs.version }} ${{ github.workspace }}/.env config.toml
+          zip golive_macos_arm_${{ inputs.version }}.zip golive_macos_arm_${{ inputs.version }} .env config.toml
 
       - name: Release
         uses: softprops/action-gh-release@v1
