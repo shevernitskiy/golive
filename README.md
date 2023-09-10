@@ -53,21 +53,22 @@ More detailed instructions are coming soon...
 
 ## Showcase
 
-<div style="display: flex; flex-direction: row">
-<div style="margin-right: 10px">
+<table>
+  <tr>
+    <td valign="top">
 
 ### Telegram announce
 
 <img width="345" alt="image" src="https://github.com/shevernitskiy/golive/assets/28886342/f7ce8163-988d-4888-b7db-10808b9f1ccf">
-
-</div>
-<div>
+    </td>
+    <td valign="top">
 
 ### Discord announce
 
 <img width="329" alt="image" src="https://github.com/shevernitskiy/golive/assets/28886342/c43ac18e-c119-4550-b21d-68d3af72b6dc">
-</div>
-</div>
+    </td>
+  </tr>
+</table>
 
 # Contribution
 
