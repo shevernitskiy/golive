@@ -53,12 +53,13 @@ More detailed instructions are coming soon...
 
 ## Showcase
 
-<div style="display: flex">
-<div style="margin-right: 15px">
+<div style="display: flex; flex-direction: row">
+<div style="margin-right: 10px">
 
 ### Telegram announce
 
 <img width="345" alt="image" src="https://github.com/shevernitskiy/golive/assets/28886342/f7ce8163-988d-4888-b7db-10808b9f1ccf">
+
 </div>
 <div>
 
