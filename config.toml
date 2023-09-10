@@ -1,0 +1,25 @@
+runner_delay = 180 # post update interval in secs in case of runner usage
+
+source_order = ["twitch", "vk"] # info will be fetch from first valid source
+
+[target.telegram]
+template = """🔴 live
+
+<b>{title}</b>
+
+Category: {category}
+Duration: {duration}
+
+👤 {viewers}"""
+
+[target.discord]
+template = """{
+  "author": { "name": "🔴 live" },
+  "title": "{title}",
+  "fields": [
+    { "name": "Category", "value": "{category}"},
+    { "name": "Duration", "value": "{duration}"}
+  ],
+  "footer": { "text": "👤 {viewers}"},
+  "image": { "url": "{preview}" }
+}"""
