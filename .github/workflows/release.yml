@@ -22,7 +22,7 @@ jobs:
       - name: Compile & Bundling
         run: |
           deno compile -A --unstable --target x86_64-pc-windows-msvc --output golive_win64_${{ inputs.version }} runner.ts
-          zip golive_win64_${{ inputs.version }}.zip golive_win64_${{ inputs.version }}.exe ${{ GITHUB_WORKSPACE }}/.env ${{ GITHUB_WORKSPACE }}/config.toml
+          zip golive_win64_${{ inputs.version }}.zip golive_win64_${{ inputs.version }}.exe ${{ github.workspace }}/.env ${{ GITHUB_WORKSPACE }}/config.toml
           ls
 
       # - name: Release
