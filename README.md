@@ -61,7 +61,7 @@ More detailed instructions are coming soon...
 
 ## Showcase
 
-<table>
+<table align="center">
   <tr>
     <td valign="top">
 
