@@ -18,7 +18,7 @@ messaging services with actual stream info and preview image. After the stream, 
 - Twitch
 - VK Live
 
-##### Supported messaging services:
+#### Supported messaging services:
 
 - Telegram
 - Discord
@@ -31,33 +31,13 @@ with actual data. If there is the announcement , but the stream has been ended, 
 
 ## How to use it
 
-There are several options to use **golive**.
-
-1. Run the binary from the release locally. Archive contains an executable binary with **runner** (described below).
-2. Set up the script to _Deno Deploy_ and trigger it with cron. You don't even need to download anything. But there will
-   be some configuration moments.
-3. Run the code with `deno` locally.
-
-### Running options
-
-- You can trigger the script manually with `run.ts`. In this case, it will be performed just ones.
-- To get updatable post and constant stream tracking, you need to trigger the script constantly with some delay. There
-  is `runner.ts` for this task. It starts the process and runs the script every 180sec (by default). A runner also a
-  compile entry for binaries.
-- In the case of using on _Deno Deploy_ there is `server.ts`, which could handle an incoming http request and trigger
-  the script.
+- Standalone executable on your machine ([tutorial](https://github.com/shevernitskiy/golive/docs/standalone.md))
+- _Deno Deploy_ worker ([tutorial](https://github.com/shevernitskiy/golive/docs/deploy.md))
+- Run code with _Deno_ directly.
 
 ## Configuration
 
-There are two main files `config.toml` and `.env`.
-
-- `config.toml` contains post templates and other basic bot configuration
-- `.env` contains sensitive information, like bot tokens and channel names/id (in the case of _Deno Deploy_ env should
-  be setted through admin dashboard, but not in file)
-
-If you don't have or don't want to use some service, just leave the field blank in .`env`
-
-More detailed instructions are coming soon...
+Configuration detailes described [here](https://github.com/shevernitskiy/golive/docs/configuration.md)
 
 ## Showcase
 
