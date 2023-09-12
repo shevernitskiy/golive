@@ -14,7 +14,7 @@ Instructions:
 4. Go to `Settings` tab in freshly created project in a dahsboard
 5. Add `enviroment variables` to switch on target functionality (available variables presented in
    [`.env.example`](https://github.com/shevernitskiy/golive/blob/main/.env.example)). More info in
-   [configuration](https://github.com/shevernitskiy/golive/docs/configuration.md) guide.
+   [configuration](https://github.com/shevernitskiy/golive/blob/main/docs/configuration.md) guide.
 6. If the stream is online, you can already check it out by clicking the main url of the project
    (https://_project-name_.deno.dev) in the `Overview` tab of the dashboard
 

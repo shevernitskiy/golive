@@ -31,13 +31,14 @@ with actual data. If there is the announcement , but the stream has been ended, 
 
 ## How to use it
 
-- Standalone executable on your machine ([tutorial](https://github.com/shevernitskiy/golive/docs/standalone.md))
-- _Deno Deploy_ worker ([tutorial](https://github.com/shevernitskiy/golive/docs/deploy.md))
+- Standalone executable on your machine
+  ([tutorial](https://github.com/shevernitskiy/golive/blob/main/docs/standalone.md))
+- _Deno Deploy_ worker ([tutorial](https://github.com/shevernitskiy/golive/blob/main/docs/deploy.md))
 - Run code with _Deno_ directly.
 
 ## Configuration
 
-Configuration detailes described [here](https://github.com/shevernitskiy/golive/docs/configuration.md)
+Configuration detailes described [here](https://github.com/shevernitskiy/golive/blob/main/docs/configuration.md)
 
 ## Showcase
 
