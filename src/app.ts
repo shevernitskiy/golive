@@ -1,6 +1,7 @@
 import { getConfig } from "./core/config.ts";
 import { GoLive } from "./core/golive.ts";
 import { log } from "./core/logger.ts";
+import { Trovo } from "./source/trovo.ts";
 import { Twitch } from "./source/twitch.ts";
 import { Vk } from "./source/vk.ts";
 import { Discord } from "./target/discord.ts";
@@ -23,6 +24,12 @@ export async function app(): Promise<void> {
         if (config.twitch.channel) {
           log(`[twitch] add source, channel: ${config.twitch.channel}`);
           golive.use(new Twitch(config.twitch.channel));
+        }
+        break;
+      case "trovo":
+        if (config.trovo.channel) {
+          log(`[trovo] add source, channel: ${config.trovo.channel}`);
+          golive.use(new Trovo(config.trovo.channel));
         }
         break;
     }

@@ -21,6 +21,7 @@ related to this service.
 | `DISCORD_CHANNEL_ID`  | discord channel id                                                                                                                                |
 | `TWITCH_CHANNEL`      | twitch channel name, which will be used to fetch stream info                                                                                      |
 | `VK_CHANNEL`          | vklive channel name, which will be used to fetch stream info                                                                                      |
+| `TROVO_CHANNEL`       | vklive channel name, which will be used to fetch stream info                                                                                      |
 
 ## config.toml
 

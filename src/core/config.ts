@@ -41,5 +41,8 @@ export async function getConfig(): Promise<Config> {
     vk: {
       channel: map.get("VK_CHANNEL"),
     },
+    trovo: {
+      channel: map.get("TROVO_CHANNEL"),
+    },
   };
 }

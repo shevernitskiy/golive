@@ -1,6 +1,10 @@
 runner_delay = 180 # post update interval in secs in case of runner usage
 
-source_order = ["twitch", "vk"] # info will be fetch from first valid source
+source_order = [
+  "twitch",
+  "vk",
+  "trovo",
+] # info will be fetch from the first valid source
 
 [target.telegram]
 template = """🔴 live

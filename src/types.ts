@@ -20,6 +20,9 @@ export type Config = {
   vk: {
     channel?: string;
   };
+  trovo: {
+    channel?: string;
+  };
 };
 
 // possible uses
