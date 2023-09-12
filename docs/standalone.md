@@ -13,4 +13,4 @@ Instructions:
    adjust update interval or post templates.
 4. Run golive executable file.
 
-> ⚠️Note: golive write some data to local db file, so it need to write access
+> ⚠️Note: golive write some data to local db file, so it needs write access
