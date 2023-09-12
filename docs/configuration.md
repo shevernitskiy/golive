@@ -30,4 +30,4 @@ Config file contains basic config data.
 | ------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `runner_delay`                  | interval between updates in seconds, will be used by standalone runner                                                                                            |
 | `source_order`                  | array of source names (streaming platform), this is the order of priority from where to get stream meta data (reasonable if you stream to more then one platform) |
-| `target.{target_name}.template` | template for the post message, if you want to change it, be sure it has right structure (telegram -> parse_mode: HTML, discord -> embed)                          |
+| `target.{target_name}.template` | template for the post message, if you want to change it, be sure it has correct structure (telegram -> parse_mode: HTML, discord -> embed)                        |
