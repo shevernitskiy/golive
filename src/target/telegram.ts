@@ -97,14 +97,16 @@ export class Telegram extends Target {
     }
   }
 
-  async delete(id: PostId): Promise<void> {
+  async delete(id: PostId): Promise<boolean> {
     try {
       await this.request<unknown>("deleteMessage", {
         chat_id: this.channel_id,
         message_id: id,
       });
+      return true;
     } catch (err) {
       error(`[${this.name}] field on post delete: ${err}`);
+      return false;
     }
   }
 }

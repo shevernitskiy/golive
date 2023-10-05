@@ -5,5 +5,5 @@ export abstract class Target {
 
   abstract update(stream_info: StreamInfo, id: PostId): Promise<PostId>;
   abstract create(stream_info: StreamInfo): Promise<PostId>;
-  abstract delete(id: PostId): Promise<void>;
+  abstract delete(id: PostId): Promise<boolean>;
 }

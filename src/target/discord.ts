@@ -78,11 +78,13 @@ export class Discord extends Target {
     }
   }
 
-  async delete(id: PostId): Promise<void> {
+  async delete(id: PostId): Promise<boolean> {
     try {
       await this.request<unknown>("DELETE", `/channels/${this.channel_id}/messages/${id}`);
+      return true;
     } catch (err) {
       error(`[${this.name}] field on post delete: ${err}`);
+      return false;
     }
   }
 }

@@ -50,10 +50,12 @@ export class GoLive {
       if (!state || state.id === 0 || state.id === "0") {
         continue;
       } else {
-        await target.delete(state.id);
-        info(`[${target.name}] deleting post, id: ${state.id}`);
-        const id = typeof state.id === "number" ? 0 : "0";
-        await this.state.set_target(target.name, { id: id });
+        const result = await target.delete(state.id);
+        if (result) {
+          info(`[${target.name}] deleting post, id: ${state.id}`);
+          const id = typeof state.id === "number" ? 0 : "0";
+          await this.state.set_target(target.name, { id: id });
+        }
       }
     }
   }
