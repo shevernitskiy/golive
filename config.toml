@@ -15,9 +15,11 @@ Category: {category}
 Duration: {duration}
 
 👤 {viewers}"""
+button = "WATCH STREAM"
 
 [target.discord]
 template = """{
+  "url": "{url}",
   "author": { "name": "🔴 live" },
   "title": "{title}",
   "fields": [

@@ -37,7 +37,9 @@ export async function app(): Promise<void> {
 
   if (config.telegram.token && config.telegram.channel_id) {
     log(`[telegram] add target, channel: ${config.telegram.channel_id}`);
-    golive.use(new Telegram(config.telegram.token, config.telegram.channel_id, config.telegram.template));
+    golive.use(
+      new Telegram(config.telegram.token, config.telegram.channel_id, config.telegram.template, config.telegram.button),
+    );
   }
 
   if (config.discord.token && config.discord.channel_id) {

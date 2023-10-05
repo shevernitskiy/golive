@@ -29,6 +29,7 @@ export async function getConfig(): Promise<Config> {
       token: map.get("TELEGRAM_TOKEN"),
       channel_id: map.get("TELEGRAM_CHANNEL_ID") ? Number(map.get("TELEGRAM_CHANNEL_ID")) : undefined,
       template: (toml.target as { telegram: { template: string } }).telegram.template,
+      button: (toml.target as { telegram: { button?: string } }).telegram.button,
     },
     discord: {
       token: map.get("DISCORD_TOKEN"),

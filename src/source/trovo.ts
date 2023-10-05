@@ -1,13 +1,17 @@
 import { error } from "../core/logger.ts";
 import { Source } from "../core/source.ts";
-import { StreamInfo } from "../types.ts";
+import { ChannelUrl, StreamInfo } from "../types.ts";
+
+const GQL_URL = "https://api-web.trovo.live/graphql" as const;
 
 export class Trovo extends Source {
   readonly name = "trovo";
-  private readonly GQL_URL = "https://api-web.trovo.live/graphql";
+
+  private channel_url: ChannelUrl;
 
   constructor(private readonly channel: string) {
     super();
+    this.channel_url = `https://trovo.live/s/${channel}`;
   }
 
   async fetch(): Promise<StreamInfo | undefined> {
@@ -24,7 +28,7 @@ export class Trovo extends Source {
 
   private async gql(execute: unknown[]): Promise<unknown[]> {
     try {
-      const res = await fetch(this.GQL_URL + `?qid=${Date.now()}`, {
+      const res = await fetch(GQL_URL + `?qid=${Date.now()}`, {
         method: "POST",
         body: JSON.stringify(execute),
       });
@@ -62,6 +66,7 @@ export class Trovo extends Source {
         title: prefix?.programInfo?.title ?? "No Title",
         start_time: prefix?.programInfo?.startTm,
         preview: prefix?.programInfo?.screenShotUrl,
+        channel_url: this.channel_url,
       };
     },
   };

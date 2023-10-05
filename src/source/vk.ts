@@ -1,12 +1,15 @@
 import { error } from "../core/logger.ts";
 import { Source } from "../core/source.ts";
-import { StreamInfo } from "../types.ts";
+import { ChannelUrl, StreamInfo } from "../types.ts";
 
 export class Vk extends Source {
   readonly name = "vk";
 
+  private channel_url: ChannelUrl;
+
   constructor(private readonly channel: string) {
     super();
+    this.channel_url = `https://vkplay.live/${channel}`;
   }
 
   async fetch(): Promise<StreamInfo | undefined> {
@@ -23,6 +26,7 @@ export class Vk extends Source {
         preview: data.previewUrl,
         viewers: data.count?.viewers,
         likes: data.count?.likes,
+        channel_url: this.channel_url,
       };
     } catch (err) {
       error(`[${this.name}] undable to fetch data from vk api: ${err}`);

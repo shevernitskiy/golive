@@ -21,6 +21,7 @@ export class Discord extends Target {
     }`;
 
     return this.template
+      .replaceAll("{url}", info.channel_url)
       .replaceAll("{title}", info.title)
       .replaceAll("{category}", info.category)
       .replaceAll("{viewers}", info.viewers.toString())

@@ -7,7 +7,12 @@ const API_ENDPOINT = "https://api.telegram.org" as const;
 export class Telegram extends Target {
   readonly name = "telegram";
 
-  constructor(private readonly token: string, private readonly channel_id: number, private readonly template: string) {
+  constructor(
+    private readonly token: string,
+    private readonly channel_id: number,
+    private readonly template: string,
+    private readonly button?: string,
+  ) {
     super();
   }
 
@@ -45,6 +50,13 @@ export class Telegram extends Target {
         caption: this.resolve_template(stream_info),
         parse_mode: "HTML",
         photo: `${stream_info.preview}?dt=${Date.now()}`,
+        reply_markup: this.button
+          ? {
+            inline_keyboard: [[
+              { text: this.button, url: stream_info.channel_url },
+            ]],
+          }
+          : undefined,
       });
       if (!res.ok) {
         error(`[${this.name}] field on post create`);
@@ -67,6 +79,13 @@ export class Telegram extends Target {
           caption: this.resolve_template(stream_info),
           parse_mode: "HTML",
         },
+        reply_markup: this.button
+          ? {
+            inline_keyboard: [[
+              { text: this.button, url: stream_info.channel_url },
+            ]],
+          }
+          : undefined,
       });
       if (!res.ok) {
         error(`[${this.name}] field on post update`);

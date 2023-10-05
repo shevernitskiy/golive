@@ -8,6 +8,7 @@ export type Config = {
     token?: string;
     channel_id?: number;
     template: string;
+    button?: string;
   };
   discord: {
     token?: string;
@@ -36,6 +37,7 @@ export type StreamInfo = {
   preview: string;
   viewers: number;
   likes?: number;
+  channel_url: ChannelUrl;
 };
 
 export type PostId = number | string;
@@ -43,3 +45,5 @@ export type PostId = number | string;
 export type SourceState = {
   id: PostId;
 };
+
+export type ChannelUrl = string;

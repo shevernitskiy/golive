@@ -1,14 +1,18 @@
 import { error } from "../core/logger.ts";
 import { Source } from "../core/source.ts";
-import { StreamInfo } from "../types.ts";
+import { ChannelUrl, StreamInfo } from "../types.ts";
+
+const GQL_URL = "https://gql.twitch.tv/gql" as const;
+const CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko" as const;
 
 export class Twitch extends Source {
   readonly name = "twitch";
-  private readonly CLIENT_ID = "kimne78kx3ncx6brgo4mv6wki5h1ko"; // web client id
-  private readonly GQL_URL = "https://gql.twitch.tv/gql";
+
+  private channel_url: ChannelUrl;
 
   constructor(private readonly channel: string) {
     super();
+    this.channel_url = `https://www.twitch.tv/${channel}`;
   }
 
   async fetch(): Promise<StreamInfo | undefined> {
@@ -31,8 +35,8 @@ export class Twitch extends Source {
 
   private async gql(execute: unknown[]): Promise<unknown[]> {
     try {
-      const res = await fetch(this.GQL_URL, {
-        headers: { "Client-Id": this.CLIENT_ID },
+      const res = await fetch(GQL_URL, {
+        headers: { "Client-Id": CLIENT_ID },
         method: "POST",
         body: JSON.stringify(execute),
       });
@@ -134,6 +138,7 @@ export class Twitch extends Source {
         title: data[2].data.user?.broadcastSettings?.title ?? "No Title",
         start_time: new Date(data[2].data.user?.stream?.createdAt).getTime() / 1000,
         preview: data[4].data.user?.stream?.previewImageURL,
+        channel_url: this.channel_url,
       };
     },
   };

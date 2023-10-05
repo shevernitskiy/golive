@@ -23,7 +23,7 @@ export class GoLive {
 
   async execute(): Promise<void> {
     const info = await this.fetch_stream_info();
-    if (!info || !info.online) {
+    if (!info?.online) {
       await this.delete_posts();
     } else {
       await this.update_posts(info);
