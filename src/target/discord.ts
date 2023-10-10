@@ -74,7 +74,7 @@ export class Discord extends Target {
       return res?.id ?? "0";
     } catch (err) {
       error(`[${this.name}] field on post create: ${err}`);
-      return 0;
+      return id;
     }
   }
 

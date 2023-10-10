@@ -93,7 +93,7 @@ export class Telegram extends Target {
       return res.result?.message_id ?? 0;
     } catch (err) {
       error(`[${this.name}] field on post update: ${err}`);
-      return 0;
+      return id;
     }
   }
 
