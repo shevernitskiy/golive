@@ -17,4 +17,4 @@ Instructions:
    [configuration](https://github.com/shevernitskiy/golive/blob/main/docs/configuration.md) guide.
 6. If the stream is online, you can already check it out by clicking the main url of the project
    (https://_project-name_.deno.dev) in the `Overview` tab of the dashboard
-7. You will find `Cron` tab in dashboard where you can ensure that cronjob has been activated.
+7. You will find `Cron` tab in dashboard where you can ensure that cronjob appeard.
