@@ -17,15 +17,3 @@ Instructions:
    [configuration](https://github.com/shevernitskiy/golive/blob/main/docs/configuration.md) guide.
 6. If the stream is online, you can already check it out by clicking the main url of the project
    (https://_project-name_.deno.dev) in the `Overview` tab of the dashboard
-
----
-
-7. To make the notification work in auto continuously mode, you need to hit this link with some interval. Here we will
-   use [cron-tab.org](https://cron-job.org/) to do it.
-8. Register an account on [cron-tab.org](https://cron-job.org/) if ou don't have one.
-9. Go to `Cronjobs` tab in your dashboard, click `Create cronjob` button.
-10. Fill in form fields:
-    - title: `golive call`
-    - url: `https://{project-name}.deno.dev` (you project url on _Deno Deploy_)
-    - execution schedule: `every 2 minutes` or `every 5 minutes` (every 1 minutes not recommended)
-11. Click `Create`
